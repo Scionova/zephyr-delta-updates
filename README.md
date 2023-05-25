@@ -1,10 +1,13 @@
-# About
-This is an example program showcasing an implementation of [DETools](https://github.com/eerimoq/detools) for [Zephyr](https://www.zephyrproject.org/). It allows for incremental firmware updates, or [delta updates](https://en.wikipedia.org/wiki/Delta_update), as an alternative to the standard procedure of downloading new firmware in its entirety. 
+# Delta Updates OTA
+This is an addition to my thesis project, which was delta updates over cable in Zephyr (not very useful, but cool), which aims to add some very needed over-the-air capabilities. First and foremost this will be BLE, but later im hoping to add LORA and NB-IoT. 
 
-The program itself is a modification of the Zephyr sample program "Blinky" (which flashes LED 1 on a board) with the added functionality that when button 1 is pressed the program checks for a new patch and, if such a patch exists, performs a firmware upgrade. A developer may easily modify the program code to make the application flash LED 2 instead, create a patch, download it to the board, push button 1, and confirm whether the upgrade was successful by checking which LED is flashing.
+# About my thesis project
+The project goal was to create an implementation of [DETools](https://github.com/eerimoq/detools) for [Zephyr](https://www.zephyrproject.org/). It allows for incremental firmware updates, or [delta updates](https://en.wikipedia.org/wiki/Delta_update), as an alternative to the standard procedure of downloading new firmware in its entirety.
+
+The program is a modification of the Zephyr sample program "Blinky" (which flashes LED 1 on a board) with the added functionality that when button 1 is pressed the program checks for a new patch and, if such a patch exists, performs a firmware upgrade. A developer may easily modify the program code to make the application flash LED 2 instead, create a patch, download it to the board, push button 1, and confirm whether the upgrade was successful by checking which LED is flashing.
 
 ### Key features 
-The program was created for my [bachelor´s thesis](https://hdl.handle.net/20.500.12380/302598), which one may look through for implementation details, descriptions of the algorithms used, methodology, and suggestions for further research, among other things. For a brief overview one may refer to the list below:
+The program was, as mentioned above, created for my [bachelor´s thesis](https://hdl.handle.net/20.500.12380/302598), which one may look through for implementation details, descriptions of the algorithms used, methodology, and suggestions for further research, among other things. For a brief overview one may refer to the list below:
 
 * The program is currently hardware specific and assumes the Nordic [nRF52840 DK](https://www.nordicsemi.com/Products/Development-hardware/nrf52840-dk) SoC is used. However, it will likely very easily be ported to other [Zephyr supported boards](https://docs.zephyrproject.org/latest/boards/index.html).
 * Downloading firmware to the device is currently only supported using the USB interface.
